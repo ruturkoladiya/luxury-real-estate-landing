@@ -3,12 +3,12 @@
 A modern, animated landing page for **DreamSpace Real Estate**, built to showcase luxury properties, services, and connect clients with real estate experts. The site is fully responsive and features smooth animations and a polished user experience.
 
 <p align="center">
-<video width="800" height="450" controls autoplay muted loop> <source src="./preview/DreamSpace-real-Estate.mp4" type="video/mp4"> <source src="/demo.webm" type="video/webm"> Your browser does not support the video tag. </video>
-  <img src="./preview/preview-01.png" width="33%">
-  <img src="./preview/preview-02.png" width="33%">
-  <img src="./preview/preview-03.png" width="33%">
-  <img src="./preview/preview-04.png" width="33%">
-  <img src="./preview/preview-05.png" width="33%">
+<video width="800" height="450" controls autoplay muted loop> <source src="./public-/preview/DreamSpace-real-Estate.mp4" type="video/mp4"> <source src="/demo.webm" type="video/webm"> Your browser does not support the video tag. </video>
+  <img src="./public/preview/preview-01.png" width="33%">
+  <img src="./public/preview/preview-02.png" width="33%">
+  <img src="./public/preview/preview-03.png" width="33%">
+  <img src="./public/preview/preview-04.png" width="33%">
+  <img src="./public/preview/preview-05.png" width="33%">
 </p>
 
 ---
