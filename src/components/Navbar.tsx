@@ -1,0 +1,91 @@
+"use client";
+
+import React, { useState } from "react";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/navbar-menu";
+import { cn } from "@/utils/cn";
+
+import forRent from "@/images/for-rent.jpeg";
+import luxuryHomes from "@/images/luxury-homes.jpeg";
+import commercial from "@/images/commercial-properties.jpeg";
+import newProject from "@/images/new-poject.jpeg";
+import Link from "next/link";
+
+const Navbar = ({ className }: { className?: string }) => {
+  const [active, setActive] = useState<string | null>(null);
+
+  return (
+    <div
+      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
+    >
+      <Menu setActive={setActive}>
+        <Link href={"/"}>
+          <MenuItem setActive={setActive} active={active} item="Home" />
+        </Link>
+        <MenuItem setActive={setActive} active={active} item="Properties">
+          <div className="hidden text-sm md:grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
+            <ProductItem
+              title="For Rent"
+              href="/properties/for-rent"
+              src={forRent}
+              description="Find budget-friendly rentals, family apartments, and pool homes for every lifestyle."
+            />
+            <ProductItem
+              title="Luxury Homes"
+              href="/properties/luxury-homes"
+              src={luxuryHomes}
+              description="Discover exclusive villas, penthouses, and high-end residences for modern living."
+            />
+            <ProductItem
+              title="Commercial Properties"
+              href="/properties/commercial-properties"
+              src={commercial}
+              description="Lease or buy offices, retail shops, and premium commercial spaces."
+            />
+            <ProductItem
+              title="New Projects"
+              href="/properties/new-projects"
+              src={newProject}
+              description="Explore upcoming developments, gated communities, and modern housing projects."
+            />
+          </div>
+          <div className="md:hidden flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/properties/for-rent">For Rent</HoveredLink>
+            <HoveredLink href="/properties/luxury-homes">
+              Luxury Homes
+            </HoveredLink>
+            <HoveredLink href="/properties/commercial-properties">
+              Commercial Properties
+            </HoveredLink>
+            <HoveredLink href="/properties/new-projects">
+              New Projects
+            </HoveredLink>
+          </div>
+        </MenuItem>
+        <MenuItem setActive={setActive} active={active} item="Services">
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/services/buy-property">
+              Property Buying Assistance
+            </HoveredLink>
+            <HoveredLink href="/services/sell-property">
+              Property Selling Assistance
+            </HoveredLink>
+            <HoveredLink href="/services/manage-property">
+              Property Management
+            </HoveredLink>
+            <HoveredLink href="/services/loans">
+              Home Loans / Financing Help
+            </HoveredLink>
+            <HoveredLink href="/services/legal-documentation">
+              Legal & Documentation
+            </HoveredLink>
+          </div>
+        </MenuItem>
+        <Link href="/contact-us">
+          <MenuItem setActive={setActive} active={active} item="Contact Us" />
+        </Link>
+      </Menu>
+    </div>
+  );
+};
+
+export default Navbar;
